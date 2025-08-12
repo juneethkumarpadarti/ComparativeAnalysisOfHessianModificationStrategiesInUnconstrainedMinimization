@@ -1,6 +1,6 @@
 # ComparativeAnalysisOfHessianModificationStrategiesInUnconstrainedMinimization
 
-📌 Overview
+##📌 Overview\\
 This project presents a comprehensive comparative study of three Hessian modification strategies in the context of unconstrained optimization. Using Newton's Method as the base algorithm, the work focuses on ensuring the Hessian matrix remains positive definite, which is crucial for convergence efficiency and stability.
 
 The three strategies analyzed are:
