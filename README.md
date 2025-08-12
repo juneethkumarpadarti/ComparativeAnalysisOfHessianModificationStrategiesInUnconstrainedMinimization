@@ -1,7 +1,8 @@
 # ComparativeAnalysisOfHessianModificationStrategiesInUnconstrainedMinimization
 
-##📌 Overview\\
-This project presents a comprehensive comparative study of three Hessian modification strategies in the context of unconstrained optimization. Using Newton's Method as the base algorithm, the work focuses on ensuring the Hessian matrix remains positive definite, which is crucial for convergence efficiency and stability.
+## 📌 Overview
+
+  This project presents a comprehensive comparative study of three Hessian modification strategies in the context of unconstrained optimization. Using Newton's Method as the base algorithm, the work focuses on ensuring the Hessian matrix remains positive definite, which is crucial for convergence efficiency and stability.
 
 The three strategies analyzed are:
 
@@ -13,8 +14,9 @@ The three strategies analyzed are:
 
 The performance of each method was evaluated on 11 benchmark optimization functions of varying complexity and dimensionality.
 
-🧠 Problem Statement
-Newton's Method relies on the Hessian matrix being positive definite for stable convergence. However, in many optimization problems, the Hessian may fail this condition, causing slow convergence or divergence.
+## 🧠 Problem Statement
+
+  Newton's Method relies on the Hessian matrix being positive definite for stable convergence. However, in many optimization problems, the Hessian may fail this condition, causing slow convergence or divergence.
 This project compares three Hessian modification strategies to determine:
 
 - Which strategy most effectively ensures positive definiteness.
@@ -23,26 +25,28 @@ This project compares three Hessian modification strategies to determine:
 
 - How strategies perform across simple, moderate, and complex function landscapes.
 
-🔍 Methodology
+## 🔍 Methodology
+
 - Optimization Algorithm: Newton's Method with Hessian modification.
 
 - Step Size Control: Line search to balance progress and stability.
 
 - Convergence Criteria: Norm of gradient < tolerance, or maximum iteration limit.
 
-Hessian Handling:
+**Hessian Handling:**
 
-Strategy 1: Eigenvalue Shifting
+  Strategy 1: Eigenvalue Shifting
 
-Strategy 2: Diagonal Adjustment & Cholesky Factorization
+  Strategy 2: Diagonal Adjustment & Cholesky Factorization
 
-Strategy 3: Eigenvalue Clamping
+  Strategy 3: Eigenvalue Clamping
 
-Test Functions (11 total):
+  Test Functions (11 total):
 
-Rosenbrock (n), Beale, Matyas, Powell Singular, Sphere (n), Booth, Styblinski–Tang (n), McCormick, Easom, Wood, Helical Valley
+  Rosenbrock (n), Beale, Matyas, Powell Singular, Sphere (n), Booth, Styblinski–Tang (n), McCormick, Easom, Wood, Helical Valley
 
-📊 Key Findings
+## 📊 Key Findings
+
 - Strategy 2 (Diagonal Adjustment & Cholesky) emerged as the most adaptable and consistently efficient, especially for complex landscapes like Powell Singular.
 
 - Strategy 1 was stable but conservative, often requiring more iterations and evaluations.
@@ -51,38 +55,47 @@ Rosenbrock (n), Beale, Matyas, Powell Singular, Sphere (n), Booth, Styblinski–
 
 Simpler functions (Sphere, Matyas, Easom) showed minimal differences between strategies, while complex, multi-modal functions benefited more from Strategy 2’s adaptiveness.
 
-📈 Results Summary
-Function	Best Strategy	Notable Observations
-Rosenbrock	2 / 3	Large performance variation
-Beale	2	Fast convergence
-Powell Singular	2	Fewest iterations, most efficient
-Styblinski–Tang	2 / 3	Strategy 2 better for gradient norm
-Wood, Helical Valley	Mixed	All strategies hit step tolerance quickly
+## 📈 Results Summary
 
-💡 Insights
-- Efficiency: Strategy 2 balanced convergence speed and robustness.
+| Function            | Best Strategy| Notable Observations                              |
+|---------------------|--------------|---------------------------------------------------|
+| Rosenbrock          | 2 / 3        | Large performance variation                       |
+| Beale               | 2            | Fast convergence                                  |
+| Powell Singular     | 2            | Fewest iterations, most efficient                 |
+| Styblinski–Tang     | 2 / 3        | Strategy 2 better for gradient norm               |
+| Wood, Helical Valley| Mixed        | All strategies hit step tolerance quickly         |
 
-- Adaptability: Better performance in landscapes with steep gradients and multiple minima.
 
-- Scalability: Works well across varying function dimensions.
+## 💡 Insights
 
-🛠️ Tech & Math Stack
-Language: Python
+  - Efficiency: Strategy 2 balanced convergence speed and robustness.
+  
+  - Adaptability: Better performance in landscapes with steep gradients and multiple minima.
+  
+  - Scalability: Works well across varying function dimensions.
 
-Core Concepts: Newton's Method, Positive Definite Hessians, Eigenvalue Decomposition, Cholesky Factorization
+## 🛠️ Tech & Math Stack
 
-Numerical Libraries: NumPy, SciPy
+  Language: Python
+  
+  Core Concepts: Newton's Method, Positive Definite Hessians, Eigenvalue Decomposition, Cholesky Factorization
+  
+  Numerical Libraries: NumPy, SciPy
+  
+  Visualization: Matplotlib (for convergence plots)
 
-Visualization: Matplotlib (for convergence plots)
+## 📂 Repository Structure
 
-📂 Repository Structure
+  <summary>Project Directory Structure</summary>
 
+```plaintext
 ├── data/                 # Test functions & configurations
-├── src/                  # Implementation of strategies & optimization code
+├── src/                  # Implementation of Hessian modification strategies & optimization code
 ├── results/              # Output data, plots, and logs
 ├── README.md             # Project documentation
-└── report.pdf            # Full project report
+└── report.pdf            # Full project report with methodology & analysis
+```
+## 📜 References
 
-📜 References
 - Numerical Optimization by Jorge Nocedal & Stephen Wright
 - Python documentation on optimization functions
